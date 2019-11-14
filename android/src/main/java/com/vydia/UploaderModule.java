@@ -173,8 +173,8 @@ public class UploaderModule extends ReactContextBaseJavaModule implements Lifecy
 
 
       request.setMethod(method)
-              .setMaxRetries(maxRetries)
-              .setDelegate(null);
+        .setMaxRetries(maxRetries)
+        .setDelegate(null);
 
       if (notification.getBoolean("enabled")) {
 
