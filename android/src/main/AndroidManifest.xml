@@ -3,7 +3,7 @@
     package="com.vydia.RNUploader">
 
     <application>
-        <service  android:name="com.vydia.RNUploader.UploadEventsService"/>
+        <service  android:name=".UploadEventsService"/>
     </application>
 
 </manifest>

@@ -141,7 +141,8 @@ public class UploadEventsService extends HeadlessJsTaskService {
     @RequiresApi(Build.VERSION_CODES.O)
     private String createNotificationChannel(String channelId, String channelName) {
         NotificationChannel chan = new NotificationChannel(channelId,
-                channelName, NotificationManager.IMPORTANCE_DEFAULT);
+                channelName, NotificationManager.IMPORTANCE_LOW);
+        chan.setSound(null, null);
 
         NotificationManager service = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         service.createNotificationChannel(chan);
