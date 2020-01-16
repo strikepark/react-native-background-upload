@@ -36,13 +36,13 @@ public class UploadEventsService extends HeadlessJsTaskService {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        if (intent.getAction().equals(START_FOREGROUND_ACTION)) {
+        if (intent != null && intent.getAction().equals(START_FOREGROUND_ACTION)) {
             return startService(intent.getBundleExtra(ARG_NOTIFICATION_OPTIONS));
-        } else if (intent.getAction().equals(STOP_FOREGROUND_ACTION)) {
+        } else if (intent != null && intent.getAction().equals(STOP_FOREGROUND_ACTION)) {
             return stopService();
+        } else {
+            return START_NOT_STICKY;
         }
-
-        return START_NOT_STICKY;
     }
 
     private int startService(Bundle notificationOptions) {
